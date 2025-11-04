@@ -1,0 +1,9 @@
+# Configuración Minimalista
+# Prueba con capacidades muy limitadas
+
+numero_clientes=2
+mensajes_por_cliente=10
+numero_filtros=1
+numero_servidores=2
+capacidad_buzon_entrada=2
+capacidad_buzon_entrega=3

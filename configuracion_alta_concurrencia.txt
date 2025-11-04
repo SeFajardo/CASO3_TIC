@@ -1,0 +1,9 @@
+# Configuración para Alta Concurrencia
+# Prueba con muchos threads y capacidades limitadas
+
+numero_clientes=5
+mensajes_por_cliente=20
+numero_filtros=3
+numero_servidores=4
+capacidad_buzon_entrada=10
+capacidad_buzon_entrega=15

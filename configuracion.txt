@@ -1,0 +1,20 @@
+# Configuración del Sistema de Mensajería
+# Formato: parametro=valor
+
+# Número de clientes emisores
+numero_clientes=3
+
+# Número de mensajes que genera cada cliente
+mensajes_por_cliente=15
+
+# Número de filtros de spam
+numero_filtros=2
+
+# Número de servidores de entrega
+numero_servidores=3
+
+# Capacidad máxima del buzón de entrada
+capacidad_buzon_entrada=8
+
+# Capacidad máxima del buzón de entrega
+capacidad_buzon_entrega=12
