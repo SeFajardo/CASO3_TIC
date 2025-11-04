@@ -23,10 +23,8 @@ public class Main {
         System.out.println(config);
         System.out.println("=".repeat(60));
         
-        // Resetear contadores estáticos de los filtros
         FiltroSpam.resetearContadores();
         
-        // Crear buzones
         buzonEntrada = new BuzonEntrada(config.getCapacidadBuzonEntrada());
         buzonCuarentena = new BuzonCuarentena();
         buzonEntrega = new BuzonEntrega(
@@ -34,7 +32,6 @@ public class Main {
             config.getNumeroServidores()
         );
         
-        // Crear clientes emisores
         clientes = new ArrayList<>();
         for (int i = 1; i <= config.getNumeroClientes(); i++) {
             ClienteEmisor cliente = new ClienteEmisor(
@@ -45,7 +42,6 @@ public class Main {
             clientes.add(cliente);
         }
         
-        // Crear filtros de spam
         filtros = new ArrayList<>();
         for (int i = 1; i <= config.getNumeroFiltros(); i++) {
             FiltroSpam filtro = new FiltroSpam(
@@ -58,13 +54,11 @@ public class Main {
             filtros.add(filtro);
         }
         
-        // Crear manejador de cuarentena
         manejadorCuarentena = new ManejadorCuarentena(
             buzonCuarentena, 
             buzonEntrega
         );
-        
-        // Crear servidores de entrega
+
         servidores = new ArrayList<>();
         for (int i = 1; i <= config.getNumeroServidores(); i++) {
             ServidorEntrega servidor = new ServidorEntrega(i, buzonEntrega);
@@ -79,23 +73,23 @@ public class Main {
             System.out.println("=".repeat(60) + "\n");
             
 
-            System.out.println("Iniciando servidores de entrega...");
+            System.out.println("Iniciando servidores de entrega");
             for (ServidorEntrega servidor : servidores) {
                 servidor.start();
             }
             Thread.sleep(100);
 
-            System.out.println("Iniciando manejador de cuarentena...");
+            System.out.println("Iniciando manejador de cuarentena");
             manejadorCuarentena.start();
             Thread.sleep(100);
 
-            System.out.println("Iniciando filtros de spam...");
+            System.out.println("Iniciando filtros de spam");
             for (FiltroSpam filtro : filtros) {
                 filtro.start();
             }
             Thread.sleep(100);
             
-            System.out.println("Iniciando clientes emisores...");
+            System.out.println("Iniciando clientes emisores");
             for (ClienteEmisor cliente : clientes) {
                 cliente.start();
             }
