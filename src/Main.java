@@ -162,9 +162,9 @@ public class Main {
         System.out.println("  Buzón entrega: " + 
             (buzonEntrega.estaVacio() ? "VACÍO" : "CON MENSAJES"));
         
-        System.out.println("=".repeat(60));
+        System.out.println("===================================");
         System.out.println("SISTEMA FINALIZADO CORRECTAMENTE");
-        System.out.println("=".repeat(60));
+        System.out.println("===================================");
     }
     
     public static void main(String[] args) {
